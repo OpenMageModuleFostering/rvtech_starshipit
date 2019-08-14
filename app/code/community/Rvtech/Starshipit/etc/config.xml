@@ -361,6 +361,16 @@
         using this shipping method, please contact us.</specificerrmsg>
         <showmethod>1</showmethod>
       </pace>
+      <startrack>
+        <active>0</active>
+        <model>ship/carrier_startrack</model>
+        <title>StarTrack</title>
+        <name>Delivery Service</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship
+        using this shipping method, please contact us.</specificerrmsg>
+        <showmethod>1</showmethod>
+      </startrack>
       <startrackexpress>
         <active>0</active>
         <model>ship/carrier_startrackexpress</model>
