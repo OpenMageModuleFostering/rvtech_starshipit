@@ -16,27 +16,27 @@ class Rvtech_Starshipit_Model_Orders extends Mage_Sales_Model_Order {
 
 	public function _getUserName() {
 
-		return Mage::getStoreConfig('starshipit_options/group1/username');
+		return Mage::getStoreConfig('shipit_options/group1/username');
 	}
 
 	public function _getAPIKey() {
 
-		return Mage::getStoreConfig('starshipit_options/group1/api_key');
+		return Mage::getStoreConfig('shipit_options/group1/api_key');
 	}
 
 	protected function _getUpdateOrderConfig() {
 
-		return Mage::getStoreConfig('starshipit_options/group1/update_orders');
+		return Mage::getStoreConfig('shipit_options/group1/update_orders');
 	}
 
 	protected function _getSyncOrderConfig() {
 
-		return Mage::getStoreConfig('starshipit_options/group1/sync_orders');
+		return Mage::getStoreConfig('shipit_options/group1/sync_orders');
 	}			
 
 	protected function _getSyncOrderAutoConfig() {
 
-		return Mage::getStoreConfig('starshipit_options/group1/sync_orders_yesno');
+		return Mage::getStoreConfig('shipit_options/group1/sync_orders_yesno');
 	}			
 
 	protected function _getFormattedTelephone($order){
@@ -48,15 +48,15 @@ class Rvtech_Starshipit_Model_Orders extends Mage_Sales_Model_Order {
 	
 		Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
 		Mage::getModel('core/config')
-					->saveConfig('starshipit_options/group1/username', $postData['username']);
+					->saveConfig('shipit_options/group1/username', $postData['username']);
 		Mage::getModel('core/config')
-					->saveConfig('starshipit_options/group1/api_key', $postData['api_key']);
+					->saveConfig('shipit_options/group1/api_key', $postData['api_key']);
 		Mage::getModel('core/config')
-					->saveConfig('starshipit_options/group1/update_orders', $postData['update_orders']);
+					->saveConfig('shipit_options/group1/update_orders', $postData['update_orders']);
 		Mage::getModel('core/config')
-					->saveConfig('starshipit_options/group1/sync_orders', $postData['sync_orders']);
+					->saveConfig('shipit_options/group1/sync_orders', $postData['sync_orders']);
 		Mage::getModel('core/config')
-					->saveConfig('starshipit_options/group1/sync_orders_yesno', $postData['sync_orders_yesno']);															
+					->saveConfig('shipit_options/group1/sync_orders_yesno', $postData['sync_orders_yesno']);															
 	}
 	
 

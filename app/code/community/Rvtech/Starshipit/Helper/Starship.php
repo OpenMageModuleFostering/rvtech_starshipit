@@ -21,7 +21,7 @@ class Rvtech_Starshipit_Helper_Starship extends Mage_Core_Helper_Abstract
 
     protected function _getAuthDetails(){
 
-        return Mage::getModel('starshipit/orders')->getAuthDetails();
+        return Mage::getModel('shipit/orders')->getAuthDetails();
     }
 
     /**
@@ -35,9 +35,9 @@ class Rvtech_Starshipit_Helper_Starship extends Mage_Core_Helper_Abstract
         if(!empty($authTo)) {
 					Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
 					Mage::getModel('core/config')
-								->saveConfig('starshipit_options/group1/username', $authTo['userName']);
+								->saveConfig('shipit_options/group1/username', $authTo['userName']);
 					Mage::getModel('core/config')
-								->saveConfig('starshipit_options/group1/api_key', $authTo['apiKey']);
+								->saveConfig('shipit_options/group1/api_key', $authTo['apiKey']);
         }else {
 					$authTo = $this->_getAuthDetails();
         }
@@ -132,7 +132,7 @@ class Rvtech_Starshipit_Helper_Starship extends Mage_Core_Helper_Abstract
     public function checkCondForMagentoWritebacks($response) {
 
         $success = $response->AddShipmentResult;
-        $update  = Mage::getModel('starshipit/orders')->needToUpdateOredrsInMage();
+        $update  = Mage::getModel('shipit/orders')->needToUpdateOredrsInMage();
 
         if($success === 'Success' && ($update)) {
             return true;

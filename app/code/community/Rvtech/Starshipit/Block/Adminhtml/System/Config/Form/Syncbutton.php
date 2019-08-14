@@ -7,7 +7,7 @@ class Rvtech_Starshipit_Block_Adminhtml_System_Config_Form_Syncbutton extends Ma
     protected function _construct()
     {
         parent::_construct();
-        $this->setTemplate('starshipit/system/config/syncbutton.phtml');
+        $this->setTemplate('shipit/system/config/syncbutton.phtml');
     }
  
     /**
@@ -28,7 +28,7 @@ class Rvtech_Starshipit_Block_Adminhtml_System_Config_Form_Syncbutton extends Ma
      */
     public function getAjaxCheckUrl()
     {
-        return Mage::helper('adminhtml')->getUrl('adminhtml/adminhtml_starshipit/syncOrder');
+        return Mage::helper('adminhtml')->getUrl('adminhtml/adminhtml_shipit/syncOrder');
     }
  
     /**
@@ -40,7 +40,7 @@ class Rvtech_Starshipit_Block_Adminhtml_System_Config_Form_Syncbutton extends Ma
     {
         $button = $this->getLayout()->createBlock('adminhtml/widget_button')
             ->setData(array(
-            'id'        => 'starshipit_test_button',
+            'id'        => 'shipit_test_button',
             'label'     => $this->helper('adminhtml')->__('Sync Orders'),
             'onclick'   => 'javascript:syncOrder(); return false;'
         ));

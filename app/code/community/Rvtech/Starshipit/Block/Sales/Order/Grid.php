@@ -200,8 +200,8 @@ class Rvtech_Starshipit_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Widg
              'url'  => $this->getUrl('*/sales_order_shipment/massPrintShippingLabel'),
         ));
 
-        $this->getMassactionBlock()->addItem('starshipIt_multi', array(
-             'label'=> Mage::helper('sales')->__('StarShipIt'),
+        $this->getMassactionBlock()->addItem('shipit_multi', array(
+             'label'=> Mage::helper('sales')->__('ShipIt'),
              'url'  => $this->getUrl('http://www.google.com'),
              'confirm' => Mage::helper('sales')->__('You Sure !!'),
              'startshipiturl' => true,

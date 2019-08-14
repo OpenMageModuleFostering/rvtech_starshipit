@@ -34,7 +34,7 @@
 class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widget_Form_Container
 {
 
-    const STARSHIP_BASE = 'http://beta.starshipit.com/templates/admin4/popupprint.aspx';
+    const STARSHIP_BASE = 'https://app.shipit.click/templates/admin4/popupprint.aspx';
 
     public function __construct()
     {

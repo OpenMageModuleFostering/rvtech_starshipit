@@ -7,7 +7,7 @@ class Rvtech_Starshipit_Block_Adminhtml_System_Config_Form_Button extends Mage_A
     protected function _construct()
     {
         parent::_construct();
-        $this->setTemplate('starshipit/system/config/button.phtml');
+        $this->setTemplate('shipit/system/config/button.phtml');
     }
  
     /**
@@ -28,7 +28,7 @@ class Rvtech_Starshipit_Block_Adminhtml_System_Config_Form_Button extends Mage_A
      */
     public function getAjaxCheckUrl()
     {
-        return Mage::helper('adminhtml')->getUrl('adminhtml/adminhtml_starshipit/test');
+        return Mage::helper('adminhtml')->getUrl('adminhtml/adminhtml_shipit/test');
     }
  
     /**
@@ -40,7 +40,7 @@ class Rvtech_Starshipit_Block_Adminhtml_System_Config_Form_Button extends Mage_A
     {
         $button = $this->getLayout()->createBlock('adminhtml/widget_button')
             ->setData(array(
-            'id'        => 'starshipit_test_button',
+            'id'        => 'shipit_test_button',
             'label'     => $this->helper('adminhtml')->__('Test'),
             'onclick'   => 'javascript:test(); return false;'
         ));

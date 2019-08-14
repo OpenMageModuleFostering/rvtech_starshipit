@@ -1,7 +1,5 @@
 <?php
-class Rvtech_Starshipit_IndexController extends Mage_Adminhtml_Controller_Action
+class Rvtech_Starshipit_IndexController extends Mage_Core_Controller_Front_Action
 {
-	public function indexAction() {
-		// echo "hey there";
-	}
+    
 }
