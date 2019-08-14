@@ -2,7 +2,7 @@
 
 class Rvtech_Starshipit_Model_Observer {
 	
-
+	const STARSHIP_BASE = 'http://app.starshipit.com/Members/Search.aspx';
 	protected $_noticeTitle = 'Starship Automatic Synchronization';
 
 	protected $_noticeStatus; 
@@ -107,4 +107,25 @@ class Rvtech_Starshipit_Model_Observer {
 		}
 
 	}
+
+	public function addMassAction($observer)
+    {
+        $block = $observer->getEvent()->getBlock();
+        $cur_url = Mage::helper('core/url')->getCurrentUrl();
+        $starshipUrl = Mage::helper('core/url')->addRequestParam(
+                self::STARSHIP_BASE,
+                array(
+                        'ReturnURL' => $cur_url,                        
+                    )
+            );
+        if(get_class($block) =='Mage_Adminhtml_Block_Widget_Grid_Massaction'
+            && $block->getRequest()->getControllerName() == 'sales_order')
+        {
+            $block->addItem('starshipIt_multi', array(
+                'label' => 'StarShipIt',
+                'starshipIt_url' => $starshipUrl,
+
+            ));
+        }
+    }
 }

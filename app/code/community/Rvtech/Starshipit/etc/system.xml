@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <config>
-    <tabs>
+<!--     <tabs>
         <starshipitconfig translate="label" module="starshipit">
             <label>Starshipit Configuration</label>
             <sort_order>200</sort_order>
@@ -92,5 +94,5 @@
                 </group1>
             </groups>                 
         </starshipit_options>
-    </sections>
+    </sections> -->
 </config>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config>
-    <menu>
+<!--     <menu>
         <starshipit translate="title" module="starshipit">
             <title>Starshipit</title>
             <sort_order>9999</sort_order>
@@ -17,5 +17,5 @@
                 </notification>
             </children>
         </starshipit>
-    </menu>
+    </menu> -->
 </config>

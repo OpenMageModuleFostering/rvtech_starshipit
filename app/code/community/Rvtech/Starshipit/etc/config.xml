@@ -35,12 +35,26 @@
                 </admin>
             </resources>
         </acl>
+        <layout>
+            <updates>
+                <starshipit>
+                    <file>starshipit.xml</file>
+                </starshipit>
+            </updates>
+        </layout>
     </adminhtml>
     <global>
      		<blocks>
          		<starshipit>
               		<class>Rvtech_Starshipit_Block</class>
          		</starshipit>
+            <adminhtml>
+              <rewrite>
+                <sales_order_view>Rvtech_Starshipit_Block_Sales_Order_View</sales_order_view>
+                <!-- Massaction Done by Observer, check below -->
+                <!-- <sales_order_grid>Rvtech_Starshipit_Block_Sales_Order_Grid</sales_order_grid> -->
+              </rewrite>
+            </adminhtml>            
       	</blocks>
         <models>
             <starshipit>
@@ -61,7 +75,15 @@
                   <method>syncOrdersNow</method>
                 </rvtech_starshipit_order_placed_sync_now>
              </observers> 
-          </checkout_type_onepage_save_order_after>  
+          </checkout_type_onepage_save_order_after>
+          <core_block_abstract_prepare_layout_before>
+            <observers>
+                <starshipit_core_block_abstract_prepare_layout_before>
+                    <class>Rvtech_Starshipit_Model_Observer</class>
+                    <method>addMassAction</method>
+                </starshipit_core_block_abstract_prepare_layout_before>
+            </observers>
+        </core_block_abstract_prepare_layout_before>  
         </events>
 	  </global>
 	  <default>
