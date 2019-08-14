@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Starshipit_Ship>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Starshipit_Ship>
+    </modules>
+</config> 

@@ -3,7 +3,7 @@ class Rvtech_Starshipit_Helper_Starship extends Mage_Core_Helper_Abstract
 {
 
 
-    public $_wsdl = 'http://app.starshipit.com/OrdersService.svc?singleWsdl';
+    public $_wsdl = 'https://app1.starshipit.com/OrdersService.svc?singleWsdl';
 
     public $_syncMsg = '';
 

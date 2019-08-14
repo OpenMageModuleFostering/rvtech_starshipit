@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Starshipit_Ship>
+      <version>0.1.0</version>
+    </Starshipit_Ship>
+  </modules>
+  <frontend>
+    <routers>
+      <ship>
+        <use>standard</use>
+        <args>
+          <module>StarShipIt_Ship</module>
+          <frontName>ship</frontName>
+        </args>
+      </ship>
+    </routers>
+    <layout>
+      <updates>
+        <ship>
+          <file>ship.xml</file>
+        </ship>
+      </updates>
+    </layout>
+  </frontend>
+  <global>
+    <models>
+      <ship>
+        <class>Starshipit_Ship_Model</class>
+        <resourceModel>ship_mysql4</resourceModel>
+      </ship>
+      <ship_mysql4>
+        <class>Starshipit_Ship_Model_Mysql4</class>
+        <entities>
+          <ship>
+            <table>ship</table>
+          </ship>
+        </entities>
+      </ship_mysql4>
+    </models>
+    <resources>
+      <ship_setup>
+        <setup>
+          <module>Starshipit_Ship</module>
+        </setup>
+        <connection>
+          <use>core_setup</use>
+        </connection>
+      </ship_setup>
+      <ship_write>
+        <connection>
+          <use>core_write</use>
+        </connection>
+      </ship_write>
+      <ship_read>
+        <connection>
+          <use>core_read</use>
+        </connection>
+      </ship_read>
+    </resources>
+    <blocks>
+      <ship>
+        <class>Starshipit_Ship_Block</class>
+      </ship>
+    </blocks>
+    <helpers>
+      <ship>
+        <class>Starshipit_Ship_Helper</class>
+      </ship>
+    </helpers>
+  </global>
+  <default>
+    <carriers>
+      <courierpost>
+        <active>0</active>
+        <model>ship/carrier_courierpost</model>
+        <title>CourierPost</title>
+        <name>Online Parcel</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+      </courierpost>
+      <auspost>
+        <active>0</active>
+        <model>ship/carrier_auspost</model>
+        <title>Australia Post</title>
+        <name>Standard</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+      </auspost>
+      <fastway>
+        <active>0</active>
+        <model>ship/carrier_fastway</model>
+        <title>Fastway</title>
+        <name>Fastway Parcel</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+      </fastway>
+      <nzpost>
+        <active>0</active>
+        <model>ship/carrier_nzpost</model>
+        <title>NZ Post</title>
+        <name>NZ Post</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+      </nzpost>
+      <dhlexpress>
+        <active>0</active>
+        <model>ship/carrier_dhlexpress</model>
+        <title>DHL Express</title>
+        <name>Express</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+      </dhlexpress>
+    </carriers>
+  </default>
+</config>

@@ -3,7 +3,9 @@
     "type": "magento-module",
     "license": "Open-Software-License-(OSL)",
     "homepage": "",
-    "description": "Syncs Orders between Magento and StarShipIt to enable quotes, printing of shipping labels and track and trace for supported carries including DHL, Australia Post, Fastway and more.",
+    "description": "This extension allows for rate quotes as well as automated shipping.
+
+Adds Australia and New Zealand supported carriers as well as a button to click through from the order details to enable automated shipping.",
     "authors": [
     {
         "name": "George Plummer",
