@@ -35,9 +35,9 @@ varienGridMassaction.prototype.apply = function(){
             this.form.action = item.url;
             this.form.submit();
         } else if(item.shipIt_url) {
-            var orders = this.getCheckedValues();            
+            var orders = this.getCheckedValues();           
             var re = /\s*,\s*/;
-            var ordersList = orders.split(re);
+			var ordersList = orders.split(re);
             var orderStr = ordersList.join("_");
             var finalURL = item.shipIt_url+'&Orders='+orderStr;
             // alert('Final URL : '+finalURL);

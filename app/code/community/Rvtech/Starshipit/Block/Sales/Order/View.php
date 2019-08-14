@@ -34,7 +34,7 @@
 class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widget_Form_Container
 {
 
-    const STARSHIP_BASE = 'https://app.shipit.click/templates/admin4/popupship.aspx';
+	const STARSHIP_BASE = 'https://app.shipit.click/templates/admin4/popupship.aspx';
 
     public function __construct()
     {
@@ -199,15 +199,16 @@ class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widg
             ));
         }*/
 
-        // Starship Button
+		// Starship Button
         $this->_addButton('order_starship', array(
                 'label'     => Mage::helper('sales')->__('ShipIt'),
 				'onclick'   => 'popWin(\'' . $this->getStarshipUrl() . '\', \'ShipIt\', \'width=840,height=630,top=150,left=300,location=no,status=no,scrollbars=yes,resizable=yes\')',
                 'class'     => 'go'
         ));
+
     }
 
-    public function getStarshipUrl()
+	public function getStarshipUrl()
     {
         $cur_url = Mage::helper('core/url')->getCurrentUrl();
         $starshipUrl = Mage::helper('core/url')->addRequestParam(

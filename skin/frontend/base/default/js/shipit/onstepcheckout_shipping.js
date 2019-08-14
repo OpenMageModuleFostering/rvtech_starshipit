@@ -36,7 +36,7 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
         autoFocus: true,
         source: function( request, response ) {
           jQuery.ajax({
-            url: "https://api.shipit.click/location?integration=magento&format=json",
+            url: "https://api2.starshipit.com/location?integration=magento&format=json",
             dataType: "json",
             data: {
               apiKey: "shipit-apikey",
@@ -182,7 +182,7 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
     },
     fillInAddressShipIt : function (addressId)
     {     
-      jQuery.post("https://api.shipit.click/location?integration=magento&format=json",
+      jQuery.post("https://api2.starshipit.com/location?integration=magento&format=json",
         {
 					apiKey: "shipit-apikey",
 					light: "true",

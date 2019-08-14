@@ -1,7 +1,7 @@
 <?php
 class Rvtech_Starshipit_Model_Observer extends Mage_Core_Helper_Abstract
 {
-    const STARSHIP_BASE = 'https://app.shipit.click/Members/Search.aspx';
+	const STARSHIP_BASE = 'https://app.shipit.click/Members/Search.aspx';
     protected $_noticeTitle = 'Starship Automatic Synchronization';
     protected $_noticeStatus; 
 
@@ -99,7 +99,7 @@ class Rvtech_Starshipit_Model_Observer extends Mage_Core_Helper_Abstract
         }
     }
 
-	  public function addMassAction($observer)
+	public function addMassAction($observer)
     {
         $block = $observer->getEvent()->getBlock();
         $cur_url = Mage::helper('core/url')->getCurrentUrl();

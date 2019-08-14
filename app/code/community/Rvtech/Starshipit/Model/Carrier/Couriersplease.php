@@ -60,7 +60,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
         $packageWeight = $request->getPackageWeight() * 1000;             //Package Weight (grams)
         $packageCurrency = $request->getPackageCurrency();
           
-        $url = 'https://api.shipit.click/rate?apiKey=' . $shipItApiKey . '&integration=magento&format=json';
+        $url = 'https://api2.starshipit.com/rate?apiKey=' . $shipItApiKey . '&integration=magento&format=json';
         $post_data = '{
                         "rate": {
                           "origin": {
