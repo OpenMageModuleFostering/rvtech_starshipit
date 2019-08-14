@@ -34,7 +34,7 @@
 class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widget_Form_Container
 {
 
-    const STARSHIP_BASE = 'http://beta.starshipit.com/templates/admin4/popupprint.aspx';
+    const STARSHIP_BASE = 'https://go.starshipit.com/templates/admin4/ship.aspx';
 
     public function __construct()
     {
@@ -181,9 +181,8 @@ class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widg
 
         // Starship Button
         $this->_addButton('order_starship', array(
-                'label'     => Mage::helper('sales')->__('ShipIt'),
-		'onclick'   => 'popWin(\'' . $this->getStarshipUrl() . '\', \'' . 'ShipIt' . '\', \'' . 'width=800,height=600,top=150,left=300,location=no,status=yes,scrollbars=yes,resizable=yes' . '\')',
-		//'onclick'   => 'popWin(\'' . $this->getStarshipUrl() . '\', 'shipment info', 'width=300,height=300,left=100,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;',
+                'label'     => Mage::helper('sales')->__('StarShipIt'),
+                'onclick'   => 'popWin('http://www.mysite.com.au/delpopup.php', 'deliveryinfo', 'width=300,height=300,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;',
                 'class'     => 'go'
         ));
     }

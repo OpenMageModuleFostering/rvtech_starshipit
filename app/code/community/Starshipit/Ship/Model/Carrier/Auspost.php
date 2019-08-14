@@ -47,7 +47,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
             try
             {
                 // Call web service.
-                $wsdl = 'http://app1.starshipit.com/shipment.svc?WSDL';
+                $wsdl = 'https://go.starshipit.com/shipment.svc?WSDL';
                 $client = new SoapClient($wsdl, array(
                     'cache_wsdl'    => WSDL_CACHE_NONE, 
                     'cache_ttl'     => 86400, 
@@ -62,7 +62,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
             }
             catch (Exception $e)
             {
-                Mage::log($e->getMessage()), null, starshipit.log);
+                Mage::log($e->getMessage(), null, starshipit.log);
             }
         }
        		
