@@ -25,9 +25,24 @@ implements Mage_Shipping_Model_Carrier_Interface {
             $destCity = $request->getDestCity();
             $destPostcode = $request->getDestPostcode();
             $packageWeight = $request->getPackageWeight();
-            $packageheight = $request->getPackageHeight();
-            $packagewidth = $request->getPackageWidth();
-            $packagedepth = $request->getPackageDepth();
+      			if ($request->getPackageHeight()) {
+              $packageHeight = $request->getPackageHeight();
+      			}
+      			else {
+              $packageHeight = 0.1;
+      			}
+            if ($request->getPackageWidth()) {
+              $packageWidth = $request->getPackageWidth();
+      			}
+      			else {
+              $packageWidth = 0.1;
+      			}
+            if ($request->getPackageDepth()) {
+              $packageDepth = $request->getPackageDepth();
+      			}
+      			else {
+              $packageDepth = 0.1;
+      			}
             
             $params = array(
                "apiKey" => $shipItApiKey,
@@ -40,13 +55,13 @@ implements Mage_Shipping_Model_Carrier_Interface {
                "country"=>$destCountry,
                "countryId"=>$destCountryId,
                "weight"=>$packageWeight,
-               "height"=>$packageheight,
-               "width"=>$packagewidth,
-               "depth"=>$packagedepth
+               "height"=>$packageHeight,
+               "width"=>$packageWidth,
+               "depth"=>$packageDepth
                );
             
             // Call web service.
-            $wsdl = 'https://app1.starshipit.com/shipment.svc?WSDL';
+            $wsdl = 'https://app.shipit.click/shipment.svc?WSDL';
             $client = new SoapClient($wsdl, array(
                 'cache_wsdl'    => WSDL_CACHE_NONE, 
                 'cache_ttl'     => 86400, 
@@ -96,7 +111,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
 	public function getTrackingInfo($tracking)
 	{
      	$status = Mage::getModel('shipping/tracking_result_status');
-        $status->setCarrier('ups');
+        $status->setCarrier($this->_code);
         $status->setCarrierTitle($this->getConfigData('title'));
         $status->setTracking($tracking);
         $status->setPopup(1);

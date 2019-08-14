@@ -46,7 +46,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
             try
             {
                 // Call web service.
-                $wsdl = 'https://go.starshipit.com/shipment.svc?WSDL';
+                $wsdl = 'https://app.shipit.click/shipment.svc?WSDL';
                 $client = new SoapClient($wsdl, array(
                     'cache_wsdl'    => WSDL_CACHE_NONE, 
                     'cache_ttl'     => 86400, 
@@ -102,7 +102,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
 	{
         //Mage::log("Get Tracking", null, ShipIt.log);
 		$status = Mage::getModel('shipping/tracking_result_status');
-        $status->setCarrier('ups');
+        $status->setCarrier($this->_code);
         $status->setCarrierTitle($this->getConfigData('title'));
         $status->setTracking($tracking);
         $status->setPopup(1);

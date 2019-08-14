@@ -34,7 +34,7 @@
 class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widget_Form_Container
 {
 
-    const STARSHIP_BASE = 'https://app.shipit.click/templates/admin4/popupprint.aspx';
+    const STARSHIP_BASE = 'https://app.shipit.click/templates/admin4/popupship.aspx';
 
     public function __construct()
     {
@@ -167,10 +167,19 @@ class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widg
                 'class'     => 'go'
             ));
         }
-
+        
+        $ignore_saleable = false;
+        try
+        {
+          $ignore_saleable = $order->canReorderIgnoreSalable();
+        } catch (Exception $ex) 
+        {
+          $ignore_saleable = $order->canReorder();
+        }
+        
         if ($this->_isAllowedAction('reorder')
             && $this->helper('sales/reorder')->isAllowed($order->getStore())
-            && $order->canReorderIgnoreSalable()
+            && $ignore_saleable
         ) {
             $this->_addButton('order_reorder', array(
                 'label'     => Mage::helper('sales')->__('Reorder'),
@@ -179,11 +188,21 @@ class Rvtech_Starshipit_Block_Sales_Order_View extends Mage_Adminhtml_Block_Widg
             ));
         }
 
+        /*if ($this->_isAllowedAction('reorder')
+            && $this->helper('sales/reorder')->isAllowed($order->getStore())
+            && $order->canReorderIgnoreSalable()
+        ) {
+            $this->_addButton('order_reorder', array(
+                'label'     => Mage::helper('sales')->__('Reorder'),
+                'onclick'   => 'setLocation(\'' . $this->getReorderUrl() . '\')',
+                'class'     => 'go'
+            ));
+        }*/
+
         // Starship Button
         $this->_addButton('order_starship', array(
                 'label'     => Mage::helper('sales')->__('ShipIt'),
-		'onclick'   => 'popWin(\'' . $this->getStarshipUrl() . '\', \'' . 'ShipIt' . '\', \'' . 'width=800,height=600,top=150,left=300,location=no,status=yes,scrollbars=yes,resizable=yes' . '\')',
-		//'onclick'   => 'popWin(\'' . $this->getStarshipUrl() . '\', 'shipment info', 'width=300,height=300,left=100,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;',
+				'onclick'   => 'popWin(\'' . $this->getStarshipUrl() . '\', \'ShipIt\', \'width=840,height=630,top=150,left=300,location=no,status=no,scrollbars=yes,resizable=yes\')',
                 'class'     => 'go'
         ));
     }

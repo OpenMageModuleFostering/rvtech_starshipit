@@ -7,6 +7,13 @@
             <textarea style="width:98%; height:8em;" id="shipnote-note" name="order[ship_note]" rows="2"
                       cols="15"><?php echo $this->__($this->getShipNote()) ?></textarea>
         </div>
+		<div style="width: 160px; float: left">Signature Required:</div>
+	    <div style="padding-top: 2px">
+	        <input type="radio" name='order[ship_signature_required]' value="1" /> Yes
+	        <input type="radio" name='order[ship_signature_required]' value="0" checked /> No
+	    </div>
+	    <div style="width: 160px; float: left">Authority to Leave:</div>
+	    <div style="padding-top: 2px"><input type="checkbox" id="authorityToLeaveCheckBox" name='order[ship_authority_to_leave]' /></div>
         <script type="text/javascript">
             AdminOrder.addMethods({
                 shipnoteFieldsBind:function (container) {
@@ -24,3 +31,4 @@
         </script>
     </div>
 </div>
+

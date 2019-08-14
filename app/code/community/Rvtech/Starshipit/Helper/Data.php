@@ -31,4 +31,9 @@ class Rvtech_Starshipit_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return Mage::getStoreConfig(self::STORE_CONFIG_PATH_FRONTEND_LABEL);
     }
+    
+    public function getShipTrackingUrl()
+        {
+            return $this->_getUrl('shiptracking/index');
+        }
 }
