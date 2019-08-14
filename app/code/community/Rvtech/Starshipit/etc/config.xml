@@ -1,4 +1,4 @@
-<config>    
+﻿<config>    
     <modules>
         <Rvtech_Starshipit>
             <version>1.0.0.0</version>
@@ -66,16 +66,7 @@
       				<class>Rvtech_Starshipit_Helper</class>
       			</starshipit>
       	</helpers>
-        <events>
-          <checkout_type_onepage_save_order_after>
-             <observers>
-                <rvtech_starshipit_order_placed_sync_now>
-                  <type>singleton</type>
-                  <class>Rvtech_Starshipit_Model_Observer</class>
-                  <method>syncOrdersNow</method>
-                </rvtech_starshipit_order_placed_sync_now>
-             </observers> 
-          </checkout_type_onepage_save_order_after>
+        <events>  
           <core_block_abstract_prepare_layout_before>
             <observers>
                 <starshipit_core_block_abstract_prepare_layout_before>

@@ -3,7 +3,7 @@
     "type": "magento-module",
     "license": "Open-Software-License-(OSL)",
     "homepage": "",
-    "description": "Syncs Orders between Magento and StarShipIt DHL to enable quotes, printing of shipping labels and track and trace.",
+    "description": "Syncs Orders between Magento and StarShipIt to enable quotes, printing of shipping labels and track and trace for supported carries including DHL, Australia Post, Fastway and more.",
     "authors": [
     {
         "name": "George Plummer",
