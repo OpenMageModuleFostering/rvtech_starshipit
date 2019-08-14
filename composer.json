@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Rvtech_Starshipit",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Syncs Orders between Magento and StarShipIT DHL ClickToDoor to enable quotes, printing of shipping labels and track and trace.",
+    "authors": [
+    {
+        "name": "George Plummer",
+        "email": "george@starshipit.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

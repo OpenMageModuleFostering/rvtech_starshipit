@@ -1,0 +1,96 @@
+<config>
+    <tabs>
+        <starshipitconfig translate="label" module="starshipit">
+            <label>Starshipit Configuration</label>
+            <sort_order>200</sort_order>
+        </starshipitconfig>
+    </tabs> 
+     <sections>
+        <starshipit_options translate="label" module="starshipit">
+            <label>Starshipit Config Options</label>
+            <tab>starshipitconfig</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>   
+            <groups>
+                <group1 translate="label">
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>  
+                    <fields>
+                        <username>
+                            <label>Username</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[<i>UserName for the Starship</i>]]></comment>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </username>
+                        <api_key>
+                            <label>API Key</label>
+                            <frontend_type>password</frontend_type>
+                            <comment><![CDATA[<i>APIKey for the Starship</i>]]></comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </api_key>
+                        <test>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>starshipit/adminhtml_system_config_form_button</frontend_model>
+                            <comment><![CDATA[<i>Click here to test that above UserName and APIKey are valid or not</i>]]></comment>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </test>
+                        <syncbutton>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>starshipit/adminhtml_system_config_form_syncbutton</frontend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </syncbutton>                        
+                         <update_orders>
+                            <label>Update orders to complete once shipped</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <tooltip><![CDATA[<i>If set to YES, it will automatically create shipment and and update track info received from StartShip</i>]]></tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </update_orders>
+                        <sync_orders_yesno>
+                            <label>Sync orders automatically</label>
+                            <frontend_type>select</frontend_type>
+                            <tooltip><![CDATA[<i>If set to YES, it will automatically sync order after every 'x' minute (mentioned below)</i>]]></tooltip>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </sync_orders_yesno>                        
+                        <sync_orders>
+                            <label>Time period to sync orders</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[<i><b>Note:</b>Time Period is in Minutes</i>]]></comment>
+                            <default>5</default>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </sync_orders>
+                    </fields>               
+                </group1>
+            </groups>                 
+        </starshipit_options>
+    </sections>
+</config>
