@@ -8,11 +8,12 @@ implements Mage_Shipping_Model_Carrier_Interface {
 		if (!Mage::getStoreConfig('carriers/'.$this->_code.'/active')) {
 			return false;
 		}
-		       
+		$show = false;
         $price = 0;
         $doCalulate = $this->getConfigData('calculate');
         if ($doCalulate==0)
         {
+			$show = true;
             $price = $this->getConfigData('price');
         }
         else{
@@ -61,23 +62,28 @@ implements Mage_Shipping_Model_Carrier_Interface {
                );
             
             // Call web service.
-            $wsdl = 'https://app.shipit.click/shipment.svc?WSDL';
-            $client = new SoapClient($wsdl, array(
-                'cache_wsdl'    => WSDL_CACHE_NONE, 
-                'cache_ttl'     => 86400, 
-                'trace'         => true,
-                'exceptions'    => true,
-            ));
-            
-            $result = $client->__soapCall("GetQuote", array($params));
-            $quoteResponse = $result->GetQuoteResult;
-            //Mage::log("Price web:".$quoteResponse->Price, null, ShipIt.log);
-            $price = $quoteResponse->Price;
+            try {
+				$wsdl = 'https://app.shipit.click/shipment.svc?WSDL';
+            	$client = new SoapClient($wsdl, array(
+                	'cache_wsdl'    => WSDL_CACHE_NONE, 
+                	'cache_ttl'     => 86400, 
+                	'trace'         => true,
+                	'exceptions'    => true,
+            	));
+            	$result = $client->__soapCall("GetQuote", array($params));
+            	$quoteResponse = $result->GetQuoteResult;
+            	//Mage::log("Price web:".$quoteResponse->Price, null, ShipIt.log);
+				if($quoteResponse->ErrorMessage == "") {
+					$show = true;
+           			$price = $quoteResponse->Price;
+				}
+			} catch (Exception $rateError) {
+				
+			}
         }
        		
 		$handling = Mage::getStoreConfig('carriers/'.$this->_code.'/handling');
 		$result = Mage::getModel('shipping/rate_result');
-		$show = true;
 		if($show){
 
 			$method = Mage::getModel('shipping/rate_result_method');

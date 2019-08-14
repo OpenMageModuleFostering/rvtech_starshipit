@@ -106,7 +106,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
         $status->setCarrierTitle($this->getConfigData('title'));
         $status->setTracking($tracking);
         $status->setPopup(1);
-        $status->setUrl("http://www.nzpost.co.nz/tools/tracking-new?trackid=".$tracking);
+		$status->setUrl("https://www.nzpost.co.nz/tools/tracking/item/".$tracking);
         return $status;           
     }  
 }

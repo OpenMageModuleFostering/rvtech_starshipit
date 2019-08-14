@@ -291,16 +291,6 @@
       </basic_settings>
     </shipnote_options>
     <carriers>
-      <courierpost>
-        <active>0</active>
-        <model>ship/carrier_courierpost</model>
-        <title>CourierPost</title>
-        <name>Online Parcel</name>
-        <price>0.00</price>
-        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship
-        using this shipping method, please contact us.</specificerrmsg>
-        <showmethod>1</showmethod>
-      </courierpost>
       <auspost>
         <active>0</active>
         <model>ship/carrier_auspost</model>
@@ -311,6 +301,36 @@
         using this shipping method, please contact us.</specificerrmsg>
         <showmethod>1</showmethod>
       </auspost>
+      <courierpost>
+        <active>0</active>
+        <model>ship/carrier_courierpost</model>
+        <title>CourierPost</title>
+        <name>Online Parcel</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship
+        using this shipping method, please contact us.</specificerrmsg>
+        <showmethod>1</showmethod>
+      </courierpost>
+      <couriersplease>
+        <active>0</active>
+        <model>ship/carrier_couriersplease</model>
+        <title>CouriersPlease</title>
+        <name>CouriersPlease Parcel</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship
+        using this shipping method, please contact us.</specificerrmsg>
+        <showmethod>1</showmethod>
+      </couriersplease>
+      <dhlexpress>
+        <active>0</active>
+        <model>ship/carrier_dhlexpress</model>
+        <title>DHL Express</title>
+        <name>Express</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship
+        using this shipping method, please contact us.</specificerrmsg>
+        <showmethod>1</showmethod>
+      </dhlexpress>
       <fastway>
         <active>0</active>
         <model>ship/carrier_fastway</model>
@@ -331,16 +351,26 @@
         using this shipping method, please contact us.</specificerrmsg>
         <showmethod>1</showmethod>
       </nzpost>
-      <dhlexpress>
+      <pace>
         <active>0</active>
-        <model>ship/carrier_dhlexpress</model>
-        <title>DHL Express</title>
-        <name>Express</name>
+        <model>ship/carrier_pace</model>
+        <title>Pace</title>
+        <name>Same Day</name>
         <price>0.00</price>
         <specificerrmsg>This shipping method is currently unavailable. If you would like to ship
         using this shipping method, please contact us.</specificerrmsg>
         <showmethod>1</showmethod>
-      </dhlexpress>
+      </pace>
+      <startrackexpress>
+        <active>0</active>
+        <model>ship/carrier_startrackexpress</model>
+        <title>StarTrack Express</title>
+        <name>Same Day</name>
+        <price>0.00</price>
+        <specificerrmsg>This shipping method is currently unavailable. If you would like to ship
+        using this shipping method, please contact us.</specificerrmsg>
+        <showmethod>1</showmethod>
+      </startrackexpress>
       <shipit>
         <active>0</active>
         <model>ship/carrier_shipit</model>

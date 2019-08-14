@@ -12,11 +12,12 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
     autocomplete : "",
     autocompleteListener : "",
     streetNumber : "",
+	unitNumber : "",
     formFields : {
         'street1': '',
         'street2': '',
         'city': '',
-        //'region': '',
+        'region': '',
         'postcode': '',
         'region_id' : ''
     },
@@ -24,7 +25,7 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
         'street1': '',
         'street2': '',
         'city': '',
-        //'region': '',
+        'region': '',
         'postcode': '',
         'region_id' : ''
     },
@@ -123,13 +124,13 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
         {
             //'administrative_area_level_3': ['street1', 'long_name'],
             //'neighborhood': ['street1', 'long_name'],
-            //'subpremise': ['street1', 'short_name'],
+            'subpremise': ['street1', 'short_name'],
             'street_number': ['street1', 'short_name'],
             'route': ['street1', 'long_name'],
             //'sublocality': ['street2', 'long_name'],
             //sublocality_level_1': ['street2', 'long_name'],
             'locality': ['city', 'long_name'],
-            //'administrative_area_level_1': [formFields.region, 'long_name'],
+            //'administrative_area_level_1': ['region', 'long_name'],
             'administrative_area_level_1': ['region_id', 'long_name'],
             'postal_code': ['postcode', 'short_name']
         };
@@ -140,7 +141,14 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
         // Get the place details from the autocomplete object.
         var place = this.autocomplete.getPlace();
         this.resetForm();
+        if (this.countryCode == 'AU') {
+            this.component_form['administrative_area_level_1'] = ['region', 'long_name'];
+        }
+        else {
+            this.component_form['administrative_area_level_1'] = ['region_id', 'long_name'];
+        }
         var type = '';
+		this.unitNumber = "";
         for (var field in place.address_components) {
             for (var t in  place.address_components[field].types)
             {
@@ -151,6 +159,11 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
                         if(f == "street_number")
                         {
                             this.streetNumber = place.address_components[field]['short_name'];
+                        }
+
+						if(f == "subpremise")
+                        {
+                            this.unitNumber = place.address_components[field]['short_name'];
                         }
 
                         var prop = this.component_form[f][1];
@@ -164,6 +177,7 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
         }
 
         this.appendStreetNumber();
+		this.appendUnitNumber();
         this.fillForm();
     },
     fillInAddressShipIt : function (addressId)
@@ -212,6 +226,14 @@ SHIPITAUTOCOMPLETE_SHIPPING.method = {
         if(this.streetNumber != '')
         {
             this.formFieldsValue['street1'] =  this.streetNumber + ' '
+            + this.formFieldsValue['street1'];
+        }
+    },
+    appendUnitNumber : function ()
+    {
+        if(this.unitNumber != '')
+        {
+            this.formFieldsValue['street1'] =  this.unitNumber + '/'
             + this.formFieldsValue['street1'];
         }
     },

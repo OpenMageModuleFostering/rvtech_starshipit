@@ -28,7 +28,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
             $packageheight = $request->getPackageHeight();
             $packagewidth = $request->getPackageWidth();
             $packagedepth = $request->getPackageDepth();
-            
+
             $params = array(
                "apiKey" => $shipItApiKey,
                "carrierid"=>3,
@@ -44,7 +44,7 @@ implements Mage_Shipping_Model_Carrier_Interface {
                "width"=>$packagewidth,
                "depth"=>$packagedepth
                );
-            
+
             // Call web service.
             $wsdl = 'https://app.shipit.click/shipment.svc?WSDL';
             $client = new SoapClient($wsdl, array(
