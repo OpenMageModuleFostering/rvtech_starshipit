@@ -1,5 +1,7 @@
 {
     "keywords": [
         "openmage-module"
-    ]
+    ],
+    "name": "openmage-module-fostering\/rvtech_starshipit",
+    "license": "OSL-3.0"
 }
