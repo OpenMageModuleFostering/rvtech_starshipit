@@ -1,20 +1,5 @@
 {
-    "name": "OpenMageModuleFostering/Rvtech_Starshipit",
-    "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
-    "homepage": "",
-    "description": "This extension allows for rate quotes as well as automated shipping.
-
-
-
-Adds Australia and New Zealand supported carriers as well as a button to click through from the order details to enable automated shipping.",
-    "authors": [
-    {
-        "name": "George Plummer",
-        "email": "george@shipit.click"
-    }
-],
-    "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    "keywords": [
+        "openmage-module"
+    ]
 }
